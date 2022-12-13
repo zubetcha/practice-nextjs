@@ -1,6 +1,7 @@
 import { useState } from 'react';
-
 import { GrandParentComponent, ParentComponent, ChildComponent, GrandChildComponent } from '../../components';
+
+// TODO: children
 
 export default function RerenderPage() {
   const [count, setCount] = useState(0);
@@ -11,13 +12,7 @@ export default function RerenderPage() {
     <div>
       <h1>✨RenderPage✨ {count}</h1>
       <button onClick={() => setCount((prev) => prev + 1)}>RerenderPage</button>
-      <GrandParentComponent>
-        {/* <ParentComponent>
-          <ChildComponent>
-            <GrandChildComponent />
-          </ChildComponent>
-        </ParentComponent> */}
-      </GrandParentComponent>
+      <GrandParentComponent></GrandParentComponent>
     </div>
   );
 }

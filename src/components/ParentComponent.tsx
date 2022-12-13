@@ -5,6 +5,8 @@ interface Props {
   children?: React.ReactNode;
 }
 
+// TODO: children
+
 export const ParentComponent = ({ children }: Props) => {
   const [count, setCount] = useState(0);
   console.log('----✨ParentComponent✨----');
@@ -13,7 +15,6 @@ export const ParentComponent = ({ children }: Props) => {
     <div>
       <h3>✨ParentComponent✨ {count}</h3>
       <button onClick={() => setCount((prev) => prev + 1)}>ParentComponent</button>
-      {/* {children} */}
       <ChildComponent />
     </div>
   );
