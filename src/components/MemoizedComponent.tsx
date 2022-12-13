@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 // TODO: React.memo
 
 interface Props {
@@ -10,7 +12,7 @@ interface Props {
   age?: number;
 }
 
-export const MemoizedComponent = ({ name, age, children }: Props) => {
+export const MemoizedComponent = memo(({ name, age, children, profile }: Props) => {
   console.log('----✨MemoizedComponent✨----');
 
   return (
@@ -20,8 +22,11 @@ export const MemoizedComponent = ({ name, age, children }: Props) => {
       <p>
         제 이름은 {name}이고, {age}살 입니당.
       </p>
+      <p>
+        제 이름은 {profile?.name}이고, {profile?.age}살 입니당.
+      </p>
     </div>
   );
-};
+});
 
 MemoizedComponent.displayName = 'MemoizedComponent';

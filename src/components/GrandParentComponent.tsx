@@ -1,5 +1,5 @@
 import { ParentComponent } from './ParentComponent';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 
 interface Props {
   children?: React.ReactNode;
@@ -13,11 +13,17 @@ export const GrandParentComponent = ({ children }: Props) => {
 
   console.log('----✨GrandParentComponent✨----');
 
+  const memoizedComponent = useMemo(() => {
+    return <ParentComponent />;
+  }, []);
+
   return (
     <div>
       <h2>✨GrandParentComponent✨ {count}</h2>
       <button onClick={() => setCount((prev) => prev + 1)}>GrandParentComponent</button>
-      <ParentComponent />
+      {memoizedComponent}
+      {/* <ParentComponent /> */}
+      {/* {children} */}
     </div>
   );
 };

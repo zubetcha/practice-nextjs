@@ -9,10 +9,24 @@ export default function BatchPage() {
   const [count3, setCount3] = useState(0);
 
   // TODO: Automatice Batch
-  const onClickAutomaticBatch = () => {};
+  const onClickAutomaticBatch = () => {
+    setCount1(count1 + 1);
+    setCount2(count2 + 1);
+    setCount3(count3 + 1);
+  };
 
   // TODO: Flush Sync
-  const onClickFlushSync = () => {};
+  const onClickFlushSync = () => {
+    flushSync(() => {
+      setCount1(count1 + 1);
+    });
+    flushSync(() => {
+      setCount2(count2 + 1);
+    });
+    flushSync(() => {
+      setCount3(count3 + 1);
+    });
+  };
 
   return (
     <div>

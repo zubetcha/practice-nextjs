@@ -6,13 +6,19 @@ import { GrandParentComponent, ParentComponent, ChildComponent, GrandChildCompon
 export default function RerenderPage() {
   const [count, setCount] = useState(0);
 
-  console.log('----✨RenderPage✨----');
+  console.log('----✨RerenderPage✨----');
 
   return (
     <div>
-      <h1>✨RenderPage✨ {count}</h1>
+      <h1>✨RerenderPage✨ {count}</h1>
       <button onClick={() => setCount((prev) => prev + 1)}>RerenderPage</button>
-      <GrandParentComponent></GrandParentComponent>
+      <GrandParentComponent>
+        <ParentComponent>
+          <ChildComponent>
+            <GrandChildComponent />
+          </ChildComponent>
+        </ParentComponent>
+      </GrandParentComponent>
     </div>
   );
 }

@@ -16,6 +16,7 @@ export const ParentComponent = ({ children }: Props) => {
       <h3>✨ParentComponent✨ {count}</h3>
       <button onClick={() => setCount((prev) => prev + 1)}>ParentComponent</button>
       <ChildComponent />
+      {/* {children} */}
     </div>
   );
 };

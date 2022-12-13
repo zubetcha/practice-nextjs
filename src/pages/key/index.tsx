@@ -48,7 +48,7 @@ export default function KeyPage() {
       <button onClick={onClickDelete}>삭제</button>
       <div>
         {list.map(({ name, id }, i) => (
-          <div key={i}>
+          <div key={id}>
             <span>{name}</span>
             <span>Index: {i}</span>
             <input></input>
